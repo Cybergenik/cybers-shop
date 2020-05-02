@@ -44,8 +44,8 @@
                 </div>
             </div>
             <div class="banner-nav">
-                <a href="timeline.html">Timeline</a>
-                <a href="safety.html">Safety</a>
+                <a href="timeline.php">Timeline</a>
+                <a href="safety.php">Safety</a>
             </div>
         </div>
     </body>

@@ -39,9 +39,9 @@
 			<p>Everything you need to know</p>
 		</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="timeline.html">Timeline</a>
-            <a href="safety.html" class="active">Safety</a>
+            <a href="index.php">Home</a>
+            <a href="timeline.php">Timeline</a>
+            <a href="safety.php" class="active">Safety</a>
         </nav>
 
         <div id="accordion" class="accordion" class="flex-container">

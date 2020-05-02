@@ -107,9 +107,9 @@
 		<p>Everything you need to know</p>
     </div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="timeline.html" class="active">Timeline</a>
-        <a href="safety.html">Safety</a>
+        <a href="index.php">Home</a>
+        <a href="timeline.php" class="active">Timeline</a>
+        <a href="safety.php">Safety</a>
     </nav>
 
     <div id="chartContainer" style="height: 70%; width: 90%; padding: 1%; padding-left: 3%;"></div>
