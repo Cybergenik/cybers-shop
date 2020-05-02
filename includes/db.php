@@ -4,21 +4,11 @@ class Conn{
     private $conn;
 
     function __construct(){
-        $creds = Array();
-        $dbfile = fopen(__DIR__ ."/db.txt", "r") or die("Unable to open DB credentials file!");
-        $file = fread($dbfile, filesize(__DIR__ ."/db.txt")); 
-        $file = explode(PHP_EOL, $file);
-        foreach($file as $i){
-            $temp = explode('=', $i);
-            $creds += Array($temp[0] => $temp[1]);
-        }
-        fclose($dbfile);
-        #region DB Credentials
-        $servername = $creds['servername'];
-        $username = $creds['username'];
-        $password = $creds['password'];
-        $dbname = $creds['dbname'];
-        #endregion
+        #DB creds from env variables  configured from Heroku
+        $servername = getenv('servername');
+        $username = getenv('username');
+        $password = getenv('password');
+        $dbname = getenv('dbname');
 
         $this->conn = new mysqli($servername, $username, $password, $dbname);
         if ($this->conn->connect_error)
