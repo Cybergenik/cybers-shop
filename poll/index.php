@@ -29,7 +29,7 @@
     </script>
 </head>
 <body id="bg">
-<?php if(isset($_COOKIE['voted'])) :?>
+<?php if(!isset($_COOKIE['voted'])) :?>
     <?php
         include_once('../includes/db.php');
         $conn = new Conn();
