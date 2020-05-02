@@ -79,7 +79,7 @@
         function addData(data) {
             for (var i = 0; i < Object.keys(data).length; i++) {
                 year = parseInt(Object.keys(data)[i].split('-')[0]);
-                month = parseInt(Object.keys(data)[i].split('-')[1]);
+                month = parseInt(Object.keys(data)[i].split('-')[1]) - 1;
                 day = parseInt(Object.keys(data)[i].split('-')[2]);
                 casesData.push({
                     x: new Date(year, month, day),
