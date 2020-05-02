@@ -171,7 +171,7 @@ session_start();
             $conn->closeConn();
             echo '
                 <div class="flex-container">
-                <a class="mybutton" style="color: #151D21;" href="https://cybers-shop.herokuapp.com/web-poll" target="_blank">Take the Survey!</a> 
+                <a class="mybutton" style="color: #151D21;" href="https://cybers-shop.herokuapp.com/poll" target="_blank">Take the Survey!</a> 
                 </div>
             ';
         }

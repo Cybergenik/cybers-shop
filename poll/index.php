@@ -170,7 +170,7 @@
             $conn->closeConn();
         }
     ?>
-<?php else: header('Location: result.php');?>
+<?php else: header('Location: results.php');?>
 <?php endif ?>
 </body>
 </html>
