@@ -51,7 +51,7 @@
                 $insert = "UPDATE web_poll 
                            SET ".$_POST['moba']." = $moba, ".$_POST['shooter']." = $shooter, moba_total = $moba_total, shooter_total = $shooter_total 
                            WHERE id = 1";
-                mysqli_query($conn, $insert);
+                mysqli_query($conn->getConn(), $insert);
                 setcookie('voted', true, time()+86400, '/');
                 $x = true;
             }
