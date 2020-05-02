@@ -59,20 +59,20 @@
     ?>
     <?php if (empty($_POST) || !$x) :?>
         <form class="flex-container" action="index.php" method="post">
-        <h2>What is your favorite MOBA:</h2><br>
-            <div>
+            <h2>What is your favorite MOBA:</h2><br>
+            <div style="text-align: left">
                 <input name="moba" id="league" type="radio" value="league">
                 <label for="league">League of Legends</label><br>        
-                    <input name="moba" id="dota" type="radio" value="dota">
+                <input name="moba" id="dota" type="radio" value="dota">
                 <label for="dota">DOTA</label><br>        
-                    <input name="moba" id="smite" type="radio" value="smite">
+                <input name="moba" id="smite" type="radio" value="smite">
                 <label for="smite">Smite</label><br>        
-                    <input name="moba" id="hots" type="radio" value="hots">
+                <input name="moba" id="hots" type="radio" value="hots">
                 <label for="hots">Heroes of the Storm</label><br>
-            </div><br>       
+            </div><br><br>      
 
             <h2>What is your Favorite Shooter:</h2><br>
-            <div style="left: 100px">
+            <div style="text-align: left">
                     <input name="shooter" id="csgo" type="radio" value="csgo">
                 <label for="csgo">Counter Strike(csgo)</label><br>        
                     <input name="shooter" id="overwatch" type="radio" value="overwatch">
@@ -87,7 +87,7 @@
                 <input class="mybutton" type="submit">
                 <input class="mybutton" type="reset">
             </div>
-        </form>';
+        </form>
     <?php elseif ($x) :
         $results = mysqli_query($conn->getConn(), $select);
         $data = Array(mysqli_fetch_array($results));
@@ -113,8 +113,8 @@
             array("label"=>"Call Of Duty", "y"=>$cod),
             array("label"=>"Fortnite", "y"=>$fortnite),
         );
-        
-        echo '<br><div id="mobasContainer" style="height: 370px; width: 100%; text-color: white;"></div>
+    ?>
+        <br><div id="mobasContainer" style="height: 370px; width: 100%; text-color: white;"></div>
         <script>
             var mobas = new CanvasJS.Chart("mobasContainer", {
             animationEnabled: true,
@@ -132,13 +132,12 @@
                 indexLabelFontColor: "white",
                 yValueFormatString: "#,##0.00\"%\"",
                 indexLabel: "{label} ({y})",
-                dataPoints: '.json_encode($mobasData, JSON_NUMERIC_CHECK).'
+                dataPoints: <?php echo json_encode($mobasData, JSON_NUMERIC_CHECK) ?>
             }]
         });
         mobas.render();
         </script>
-        ';
-        echo '<br><br><div id="shootersContainer" style="height: 370px; width: 100%; color: white;"></div>
+        <br><div id="shootersContainer" style="height: 370px; width: 100%; color: white;"></div>
         <script>
             var shooters = new CanvasJS.Chart("shootersContainer", {
             animationEnabled: true,
@@ -157,14 +156,12 @@
                 indexLabelFontColor: "white",
                 yValueFormatString: "#,##0.00\"%\"",
                 indexLabel: "{label} ({y})",
-                dataPoints: '.json_encode($shootersData, JSON_NUMERIC_CHECK).'
+                dataPoints: <?php echo json_encode($shootersData, JSON_NUMERIC_CHECK); ?>
             }]
         });
         shooters.render();
         </script>
-        ';
-        $conn->closeConn();
-    ?>
+        <?php $conn->closeConn(); ?>
     <?php endif ?>
 <?php else: header('Location: results.php');?>
 <?php endif ?>
