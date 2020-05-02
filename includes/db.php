@@ -5,10 +5,10 @@ class Conn{
 
     function __construct(){
         #DB creds from env variables  configured from Heroku
-        $servername = getenv('servername');
-        $username = getenv('username');
-        $password = getenv('password');
-        $dbname = getenv('dbname');
+        $servername = getenv('db_server');
+        $username = getenv('db_user');
+        $password = getenv('db_pass');
+        $dbname = getenv('db_name');
 
         $this->conn = new mysqli($servername, $username, $password, $dbname);
         if ($this->conn->connect_error)
