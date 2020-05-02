@@ -1,0 +1,23 @@
+{
+    "things": [{
+            "title": "Stay Home",
+            "img":"images/home.jpg",
+            "desc": "If you can and avoid any non-essential travel. Avoid social gatherings of more than 10 people. "
+        },{
+            "title": "Practice social distancing",
+            "img":"images/distancing.png",
+            "desc": "If you can have the meeting online, do it. Try to keep at least 6 feet(about two-arm lengths) away from others if you must go out in public. Stay connected with loved ones through video and phone calls, texts and social media. Avoid close contact with people who are sick."
+        },{
+            "title": "Wash your hands",
+            "img":"images/wash.png",
+            "desc": "Try washing your hands with soap and warm water for at least 20 seconds, especially after being in a public place, or after blowing your nose, coughing or sneezing. If soap and water are not readily available, use hand sanitizer with at least 60% alcohol."
+        },{
+            "title": "Clean and disinfect",
+            "img":"images/clean.jpg",
+            "desc": "On a weekly basis clean and disinfect household items. Focus on high-touch surfaces which include phones, remote controls, counters, tabletops, doorknobs, bathroom fixtures, toilets, keyboards, tablets and bedside tables. Follow CDC guidance."
+        },{
+            "title": "Follow the CDC guidelines",
+            "img":"images/cdc.png",
+            "desc": "The CDC has provided some very helpful resources that can show you how to protect yourself, what to do if your sick. Symptoms information, and updates on everything that's happening with coronavirus from cases, deaths, recovered, and vaccination efforts and newest guidelines. "
+        }]
+}

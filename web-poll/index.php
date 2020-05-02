@@ -29,6 +29,7 @@
     </script>
 </head>
 <body id="bg">
+<?php if(isset($_COOKIE['voted'])) :?>
     <?php
         include_once('../includes/db.php');
         $conn = new Conn();
@@ -51,6 +52,7 @@
                            SET ".$_POST['moba']." = $moba, ".$_POST['shooter']." = $shooter, moba_total = $moba_total, shooter_total = $shooter_total 
                            WHERE id = 1";
                 mysqli_query($conn, $insert);
+                setcookie('voted', true, time()+86400, '/');
                 $x = true;
             }
         }
@@ -168,5 +170,7 @@
             $conn->closeConn();
         }
     ?>
+<?php else: header('Location: result.php');?>
+<?php endif ?>
 </body>
 </html>

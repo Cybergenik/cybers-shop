@@ -1,0 +1,58 @@
+:root {
+    --bg-dark: #3a638b;
+    --bg: #34495e;
+    --fg-header: #e74c3c;
+    --bg-dark: #0a3d62;
+    --bg: #3c6382;
+    --nav: #3498db;
+
+    --red: #e55039;
+    --yellow: #f6b93b;
+    --green: #78e08f;
+
+    --button-bg: #3c6382;
+    --button-hover: #60a3bc;
+}
+
+body{
+    background-color: #3a638b;
+}
+
+/*#container {
+    display: grid;
+    grid-template-columns: auto 700px auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". FAQ ."
+    ". Questions .";
+    }*/
+
+#panel,#panel1,#panel2,#panel3,#panel4,#panel5,#flip,#flip1,#flip2,#flip3,#flip4,#flip5 {
+    padding: 5px;
+    text-align: center;
+    background: #34495e;
+    border: solid 1px #c3c3c3;
+    color: white;
+    border-radius: 10px;
+    width: auto;
+  }
+  
+  #panel,#panel1,#panel2,#panel3,#panel4,#panel5 {
+    padding: auto;
+    display: none;
+  }
+
+  .Quest1 span{
+    color:#e55039;
+  }
+
+ .centerTopic{
+    display:flex;
+    justify-content: center;
+    color: white;
+    grid-area: FAQ;
+ }
+
+ .QuestBox {
+    grid-area: Questions;
+ }

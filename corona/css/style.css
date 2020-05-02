@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+:root {
+    --bg-dark: #3a638b;
+    --bg: #34495e;
+    --fg-header: #e74c3c;
+    --bg-dark: #0a3d62;
+    --bg: #3c6382;
+    --nav: #3498db;
+
+    --red: #e55039;
+    --yellow: #f6b93b;
+    --green: #78e08f;
+
+    --button-bg: #3c6382;
+    --button-hover: #60a3bc;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(#0a3d62 20%, #3498db 130%);
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--bg-dark);
+	color: white;
+	
+	padding-bottom: 15px;
+}
+
+.banner-fullscreen {
+    height: 100%;
+}
+
+.banner.banner-fullscreen h1 {
+    font-size: 6em;
+}
+
+.banner.banner-fullscreen .tracker-container p {
+    font-size: 1.2em;
+}
+
+.banner h1 {
+    font-size: 4em;
+    margin: 0;
+    padding-top: 10px;
+    color: var(--red);
+}
+
+.banner p {
+	font-style: italic;
+	font-weight: 500;
+}
+
+.banner span {
+    color: white;
+}
+
+.banner-nav {
+    margin: 5px;
+}
+
+.banner-nav a {
+    text-decoration: none;
+    color: white;
+
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 2px solid transparent;
+
+    background-color: var(--button-bg);
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    transition: 0.2s ease-out;
+}
+
+.banner-nav a:hover {
+    background-color: var(--red);
+}
+.tracker-container{
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.tracker-container p {
+    display: inline-block;
+    padding: 1px;
+}
+
+.tracker-container .tracker-bold {
+    font-weight: 500;
+}
+
+#confirmedCases {
+    color: var(--yellow);
+}
+
+#totalDeaths {
+    color: var(--red);
+}
+
+#totalRecovered {
+    color: var(--green);
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+
+    background-color: var(--bg);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    border-bottom: 2px solid transparent;
+
+    transition: 0.2s ease-out;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+    text-decoration: none;
+    color: white;
+}
+
+nav a.active {
+	font-weight: 800;
+	border-bottom: 3px solid white;
+}
+
+.mybutton {
+    font-size: 24px;
+    background: #33608d;
+    display: block;
+    text-align: center;
+    width: 95%;
+    color: white;
+    padding: 6px;
+    margin-top: 15px;
+    margin-right: 2%;
+    margin-left: 2%;
+    border: none;
+    border-radius: 5px;
+}
+.mybutton:hover {
+    color: var(--fg-header);
+}
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.flex-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.flex-safety {
+    display: flex;
+    justify-content: center;
+    padding-left: 5%; 
+}
+#content {
+    font-size: 20px;
+    width: 95%;
+    color: black; 
+    padding: 2%;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-left: 2%;
+    border: none;
+    border-radius: 5px;
+}
+@media screen and (max-width: 600px){
+    .tracker-container{
+        display: flex;
+        flex-wrap: nowrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 20px;
+        overflow: hidden;
+    }
+}
