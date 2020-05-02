@@ -1,9 +1,3 @@
-# CS2440
-
-PHP site for my projects.
-
-## Catalog Page
-
-[[Live Site]](https://lucianoremes2440.herokuapp.com/catalog/)
+# Personal Projects
 
 - This is hosted on Heroku
