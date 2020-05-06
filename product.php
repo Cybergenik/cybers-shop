@@ -41,8 +41,6 @@ session_start();
             if(!isset($_SESSION['prodid'])){
                 $_SESSION['prodid'] = array();
                 $_SESSION['qty'] = array();
-                $_SESSION['price'] = array();
-                $_SESSION['name'] = array();
             }
             $pid = array_keys($_SESSION['prodid'], $_POST['prodid']);
             if(isset($_SESSION['prodid'][$pid[0]])){
@@ -52,8 +50,6 @@ session_start();
             else{
                 array_push($_SESSION['prodid'], $_POST['prodid']);
                 array_push($_SESSION['qty'], $_POST['qty']);
-                array_push($_SESSION['price'], $_POST['price']);
-                array_push($_SESSION['name'], $_POST['name']);
                 header("Location: catalog.php");
             }
         }
@@ -82,9 +78,7 @@ session_start();
                     <p style=" width: 75%; margin: 0% 0% 5% 0%;">'.$product->getDesc().'</p>
                     <form action="product.php" method="POST">
                     <div class="flex-container2">
-                        <input type="hidden" name="prodid" value="'.$prodid.'">
-                        <input type="hidden" name="name" value="'.$product->getName().'">
-                        <input type="hidden" name="price" value="'.$product->getPrice().'">
+                        <input type="hidden" name="prodid" min="1" value="'.$prodid.'">
                         <label for="amount">Amount:</label>
                         <input style="width: 60px;" class="myin" type="number" min="1" name="qty" step="1" value="1">
                         <input class="mybutton" type="submit" value="Add to Cart"> 
