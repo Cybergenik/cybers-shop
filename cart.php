@@ -49,13 +49,9 @@ if(!empty($_POST) && !isset($_POST['purchase'])){
         }
         else{
             unset($_SESSION['prodid'][$id]);
-            unset($_SESSION['name'][$id]);
-            unset($_SESSION['price'][$id]);
             unset($_SESSION['qty'][$id]);
             if(empty($_SESSION['prodid'])){
                 unset($_SESSION['prodid']);
-                unset($_SESSION['name']);
-                unset($_SESSION['price']);
                 unset($_SESSION['qty']);
             }
         }
@@ -74,16 +70,19 @@ if(!isset($_POST['purchase'])){
         </tr>
     ';
         $total= 0.00;
+
         foreach($_SESSION['prodid'] as $i=>$val){
+            include_once('includes/product.php');
+            $prod = new Product($val);
             echo '
                 <tr>
-                <th>'.$_SESSION['name'][$i].'</th>
-                <th>$'.$_SESSION['price'][$i].'</th>
-                <th>$'.$_SESSION['price'][$i] * $_SESSION['qty'][$i].'</th>
+                <th>'.$prod->getName().'</th>
+                <th>$'.$prod->getPrice().'</th>
+                <th>$'.$prod->getPrice() * $_SESSION['qty'][$i].'</th>
                 <th><input id="qty" style="width: 65px;" class="myin" type="number" min="0" name="'.$i.'" step="1" value="'.$_SESSION['qty'][$i].'"></th>
                 </tr>
             ';
-            $total += $_SESSION['price'][$i] * $_SESSION['qty'][$i];
+            $total += $prod->getPrice() * $_SESSION['qty'][$i];
         }
         echo'
             <tr>
@@ -127,15 +126,17 @@ else{
         </tr>';
     $total= 0.00;
     foreach($_SESSION['prodid'] as $i=>$val){
+        include_once('includes/product.php');
+        $prod = new Product($val);
         echo '
             <tr>
-            <th>'.$_SESSION['name'][$i].'</th>
-            <th>$'.$_SESSION['price'][$i].'</th>
-            <th>$'.$_SESSION['price'][$i] * $_SESSION['qty'][$i].'</th>
+            <th>'.$prod->getName().'</th>
+            <th>$'.$prod->getPrice().'</th>
+            <th>$'.$prod->getPrice() * $_SESSION['qty'][$i].'</th>
             <th>'.$_SESSION['qty'][$i].'</th>
             </tr>
         ';
-        $total += $_SESSION['price'][$i] * $_SESSION['qty'][$i];
+        $total += $prod->getPrice() * $_SESSION['qty'][$i];
     }
     echo'
     <tr>
@@ -151,8 +152,6 @@ else{
     </div>
     ';
     unset($_SESSION['prodid']);
-    unset($_SESSION['name']);
-    unset($_SESSION['price']);
     unset($_SESSION['qty']);
 }
     ?>
