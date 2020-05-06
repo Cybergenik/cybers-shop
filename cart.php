@@ -42,7 +42,6 @@ session_start();
     <h2 style="border-bottom: 2px solid; width: 15%; color: #ff7a7a; margin-bottom: 2%;">Cart</h2>
 <?php
 if(!empty($_POST) && !isset($_POST['purchase'])){
-    echo '<br>';
     foreach($_POST as $id=>$val){   
         if($val != 0){
             $_SESSION['qty'][$id] = $val;
@@ -70,7 +69,6 @@ if(!isset($_POST['purchase'])){
         </tr>
     ';
         $total= 0.00;
-
         foreach($_SESSION['prodid'] as $i=>$val){
             include_once('includes/product.php');
             $prod = new Product($val);
