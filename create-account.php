@@ -19,9 +19,9 @@ session_start();
     <?php else:?>
         <a href="index.php">Home</a>
     <?php endif;?>
-        <a href="catalog.php">products</a>
+        <a href="catalog.php">Products</a>
     <?php if(isset($_session['auth'])) :?>
-        <a href="logout.php">logout</a>
+        <a href="logout.php">Logout</a>
         <a href="cart.php" style="margin-left: 5%;"><img src="img/cart.png" alt="cart" height="32" width="32"></a>
         <?php
         if(isset($_session['prodid'])){
