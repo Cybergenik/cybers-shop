@@ -59,18 +59,14 @@ session_start();
 <?php
   if (!empty($_POST['user']) && !empty($_POST['new_user'])){
       $conn = new Conn();
-      include_once('includes/hash.php');
       $user_auth = $conn->prepare("SELECT * FROM users WHERE username=?");
       $user = str_replace(' ', '', $_POST['user']);
       $user_auth->bind_param("s", $user);
-      //Assign variables
-      //Execute SQL
       $user_auth->execute();
       $result = $user_auth->get_result();
       $auth = $result->num_rows; 
   }
 ?>
-
 <?php endif; ?>
 </body>
 </html>
