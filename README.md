@@ -1,5 +1,5 @@
 # Personal Projects
 
-- This is hosted on Heroku
-
-Live site: https://cybers-shop.herokuapp.com/
+- COVID tracking app
+- Item tracking and purchasing app
+- login system with hasing and DB functionality
